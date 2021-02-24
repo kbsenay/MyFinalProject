@@ -18,5 +18,6 @@ namespace Business.Abstract
         IDataResult<Product> GetById(int productId);  //Tel başına ürün döndürür. Alışveriş sitesinde tek bir ürün ararken ayrıntılarına bakmak için.
 
         IResult Add(Product product);
+        IResult Update(Product product);
     }
 }
