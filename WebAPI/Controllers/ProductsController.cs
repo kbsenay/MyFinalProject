@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
             //Swagger--Dökümantasyon Yapısı
             //Dependency chain-- Bağımlılık Zinciri
 
-            Thread.Sleep(5000);
+            Thread.Sleep(2000);
 
             var result = _productService.GetAll();
             if (result.Success)
