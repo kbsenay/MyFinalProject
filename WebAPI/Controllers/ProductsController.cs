@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
             //Swagger--Dökümantasyon Yapısı
             //Dependency chain-- Bağımlılık Zinciri
 
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
 
             var result = _productService.GetAll();
             if (result.Success)
@@ -45,6 +45,17 @@ namespace WebAPI.Controllers
         public  IActionResult GetById(int id) 
         {
             var result = _productService.GetById(id);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getbycategory")]
+        public IActionResult GetByCategory(int categoryId)
+        {
+            var result = _productService.GetAllByCategoryId(categoryId);
             if (result.Success)
             {
                 return Ok(result.Data);
